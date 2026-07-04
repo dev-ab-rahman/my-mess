@@ -13,6 +13,9 @@ import {
   Sparkles,
 } from "lucide-react-native";
 import { useRouter } from "expo-router";
+import React from "react";
+import Modal from "@/components/Modal";
+import Button from "@/components/Button";
 
 const { width } = Dimensions.get("window");
 
@@ -99,6 +102,9 @@ function GlassCard({
 }
 
 export default function HomeScreen() {
+
+  const [modalVisible, setModalVisible] = React.useState(false);
+
   
   const router = useRouter();
 
@@ -212,8 +218,8 @@ export default function HomeScreen() {
                 transform: [{ scale: pressed ? 0.98 : 1 }],
               })}
               onPress={() => {
-                // Navigate to the "get-started" route when pressed
-                router.push("/(home)");
+                // Modal said to be opend
+                setModalVisible(true);
               }}
             >
               <LinearGradient
@@ -381,6 +387,17 @@ export default function HomeScreen() {
           </MotiView>
         </ScrollView>
       </SafeAreaView>
+
+                {/* MODAL  */}
+
+      <Modal  visible={modalVisible} onClose={() => setModalVisible(false)} title="Welcome!" subtitle="Choose how you'd like to get started." >
+        <View style={{ padding: 20 }}>
+          
+          <Button title="Create a new Mess" onPress={()=>router.push("/(create-mess)")}/>
+          <Text style={{ textAlign: "center", marginVertical: 12, color: "#a1a1aa" }}>or</Text>
+          <Button title="Join an existing Mess" onPress={()=>router.push("/(join-mess)")}/>
+        </View>
+      </Modal>
     </View>
   );
 }
