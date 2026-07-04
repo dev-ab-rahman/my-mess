@@ -45,7 +45,7 @@ export default function BottomBar({
         elevation: 20,
       }}
     >
-      <View className="flex-row items-center justify-between">
+      <View className="flex-row items-center justify-between px-5">
         {state.routes.map((route, index) => {
           const focused = state.index === index;
 

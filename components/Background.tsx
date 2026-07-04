@@ -7,6 +7,7 @@ import {
   StyleSheet,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const { width } = Dimensions.get("window");
 
@@ -54,7 +55,7 @@ export default function AmbientBackground({
   style,
 }: AmbientBackgroundProps) {
   return (
-    <View style={[styles.container, { backgroundColor }, style]}>
+    <SafeAreaView style={[styles.container, { backgroundColor }, style] }>
       {/* Top Hero Gradient */}
       <LinearGradient
         colors={topGradientColors}
@@ -79,13 +80,14 @@ export default function AmbientBackground({
       />
 
       {children}
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingHorizontal: 5,
   },
 
   topGradient: {
