@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "my-expo-app",
-    "slug": "my-expo-app",
+    "name": "My Mess",
+    "slug": "my-mess",
     "version": "1.0.0",
 
-    "scheme": "my-expo-app",
+    "scheme": "myMess",
     "platforms": ["ios", "android"],
     "web": {
       "bundler": "metro",
