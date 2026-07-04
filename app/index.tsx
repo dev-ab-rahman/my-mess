@@ -213,7 +213,7 @@ export default function HomeScreen() {
               })}
               onPress={() => {
                 // Navigate to the "get-started" route when pressed
-                router.push("/(root)");
+                router.push("/(home)");
               }}
             >
               <LinearGradient
