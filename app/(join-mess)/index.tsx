@@ -77,7 +77,7 @@ export default function JoinMessScreen() {
             <Pressable
                 onPress={() => {
                     // Verify Invite Code
-                    router.push("/(home)/duties");
+                    router.push("/(member-information)");
                 }}
                 className="mt-auto mb-10 h-14 flex-row items-center justify-center rounded-2xl bg-sky-500 active:opacity-90"
             >
