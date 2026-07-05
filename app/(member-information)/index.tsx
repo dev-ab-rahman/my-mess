@@ -16,6 +16,7 @@ import Card from "@/components/Card";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 import AmbientBackground from "@/components/Background";
+import { useRouter } from "expo-router";
 
 
 
@@ -28,6 +29,9 @@ type FormData = {
 };
 
 export default function CompleteProfileScreen() {
+
+    const router = useRouter();
+
     const {
         control,
         handleSubmit,
@@ -70,6 +74,7 @@ export default function CompleteProfileScreen() {
 
     const onSubmit = (data: FormData) => {
         console.log(data);
+        router.push("/(home)");
     };
 
     return (
